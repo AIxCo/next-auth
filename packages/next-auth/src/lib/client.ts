@@ -88,7 +88,7 @@ export interface SignOutParams<R extends boolean = true> {
 }
 
 /**
- 
+
  * If you have session expiry times of 30 days (the default) or more, then you probably don't need to change any of the default options.
  *
  * However, if you need to customize the session behavior and/or are using short session expiry times, you can pass options to the provider to customize the behavior of the {@link useSession} hook.
@@ -163,7 +163,7 @@ export function apiBaseUrl(__NEXTAUTH: AuthClientConfig) {
     return `${__NEXTAUTH.baseUrlServer}${__NEXTAUTH.basePathServer}`
   }
   // Return relative path when called client side
-  return __NEXTAUTH.basePath
+  return `${__NEXTAUTH.baseUrl}${__NEXTAUTH.basePath}`
 }
 
 /** @internal  */
